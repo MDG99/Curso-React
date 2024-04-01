@@ -2,9 +2,10 @@
 import imgUno from './assets/images/img-1.jpeg'
 
 // los componentes siempre van en mayúscula
-const Button = () => {
+const Button = (props) => {
+    const {text} = props
     return(
-        <button>I 'am a button</button>
+        <button>{text}</button>
     )
 }
 
@@ -20,7 +21,9 @@ const App = () => {
         <>
             <h1 className={classTitle}>{title.toUpperCase()}</h1>
             <img src={pathImg} alt="" />
-            <Button/>
+            <Button text="botón 1"/>
+            <Button text="botón 2"/>
+            <Button text="botón 3"/>
             <ul>
                 {
                     fruits.map((fruit, index) => {
