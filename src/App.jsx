@@ -21,7 +21,7 @@ const App = () => {
     const title = "mi titulo desde una constante"
     const classTitle = "text-center"
     const pathImg = "https://picsum.photos/200/300"
-    const status = false
+    const status = true
 
     return (
         // Más de un componente se tiene que devolver en un contenedor
@@ -30,7 +30,8 @@ const App = () => {
             <img src={pathImg} alt="" />
             <Button/>
             {
-                status ? <OnlineMessage/> : <OfflineMessage/>
+                // Solo el if sin el Else, se utiliza el operador &&
+                status && <OnlineMessage/> 
             }
         </>
     )
