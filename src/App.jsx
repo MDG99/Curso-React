@@ -7,7 +7,13 @@
 
 
 const App = () => {
-    return (<h1 className="text-center"> Hola soy React</h1>)
+    return (
+        // Más de un componente se tiene que devolver en un contenedor
+        <dv>
+            <h1 className="text-center"> Hola soy React</h1>
+            <img src="https://picsum.photos/200/300" alt="" />
+        </dv>
+    )
 }
 
 // Exportamos
