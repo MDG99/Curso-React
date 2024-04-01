@@ -1,3 +1,6 @@
+// Podemos importar usando vite. Nos trae el path
+import imgUno from './assets/images/img-1.jpeg'
+
 // los componentes siempre van en mayúscula
 const Button = () => {
     return(
@@ -20,11 +23,14 @@ const OfflineMessage = () => {
 const App = () => {
     const title = "mi titulo desde una constante"
     const classTitle = "text-center"
-    const pathImg = "https://picsum.photos/200/300"
-    const status = true
+    // El relative path empieza desde el src
+    // const pathImg = "src/assets/images/img-1.jpeg"
+    const pathImg = imgUno
+    const status = false
 
     return (
         // Más de un componente se tiene que devolver en un contenedor
+        // Los componentes se pueden reutilizar las veces que uno quiera
         <>
             <h1 className={classTitle}>{title.toUpperCase()}</h1>
             <img src={pathImg} alt="" />
