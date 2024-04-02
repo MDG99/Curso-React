@@ -1,12 +1,18 @@
 // Podemos importar usando vite. Nos trae el path
 import imgUno from './assets/images/img-1.jpeg'
+import PropTypes from "prop-types"
 
 // los componentes siempre van en mayúscula
-const Button = (props) => {
-    const {text} = props
+const Button = ({text}) => {
     return(
         <button>{text}</button>
     )
+}
+
+// Le estamos diciendo que nuesto componente necesita el atributo text de tipo 
+// string
+Button.PropTypes = {
+    text: PropTypes.string.isRequired
 }
 
 const App = () => {
