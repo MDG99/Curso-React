@@ -4,8 +4,13 @@ import PropTypes from "prop-types"
 
 // los componentes siempre van en mayúscula
 const Button = ({text}) => {
+
+    const handleClickButton = (title) => {
+        console.log("Handle Click: " + title )
+    }
+
     return(
-        <button>{text}</button>
+        <button onClick={() => handleClickButton(text)}>{text}</button>
     )
 }
 
