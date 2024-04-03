@@ -1,13 +1,14 @@
 // Podemos importar usando vite. Nos trae el path
 import imgUno from './assets/images/img-1.jpeg'
 import Button from "./components/Button"
-import ItemFruit from './components/ItemFruit'
+import ListFruit from './components/ListFruit'
 
 
 const App = () => {
     const title = "mi titulo desde una constante"
     const classTitle = "text-center"
     const pathImg = imgUno
+
     const fruits = ["🍏", "🍉", "🍇", "🍋"]
 
     return (
@@ -19,14 +20,8 @@ const App = () => {
             <Button text="botón 1"/>
             <Button text="botón 2"/>
             <Button text="botón 3"/>
-            <ul>
-                {
-                    fruits.map((fruit, index) => {
-                        //return (<li key={index}>{fruit} - {index}</li>)
-                        return <ItemFruit key={index} text={fruit}/>
-                    })
-                }
-            </ul>
+            <ListFruit fruits={fruits}/>
+            <ListFruit fruits={fruits}/>
         </>
     )
 }
