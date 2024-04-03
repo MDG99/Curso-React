@@ -9,6 +9,13 @@ const Button = ({text}) => {
     )
 }
 
+
+const ItemFruit = (props) => {
+    const {index, text} = props
+    return (
+        <li key={index}>{text}</li>
+    )
+}
 // Le estamos diciendo que nuesto componente necesita el atributo text de tipo 
 // string
 Button.PropTypes = {
@@ -33,7 +40,8 @@ const App = () => {
             <ul>
                 {
                     fruits.map((fruit, index) => {
-                        return (<li key={index}>{fruit} - {index}</li>)
+                        //return (<li key={index}>{fruit} - {index}</li>)
+                        return <ItemFruit key={index} text={fruit}/>
                     })
                 }
             </ul>
