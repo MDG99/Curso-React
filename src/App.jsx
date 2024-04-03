@@ -1,18 +1,7 @@
 // Podemos importar usando vite. Nos trae el path
 import imgUno from './assets/images/img-1.jpeg'
 import PropTypes from "prop-types"
-
-// los componentes siempre van en mayúscula
-const Button = ({text}) => {
-
-    const handleClickButton = (title) => {
-        console.log("Handle Click: " + title )
-    }
-
-    return(
-        <button onClick={() => handleClickButton(text)}>{text}</button>
-    )
-}
+import Button from "./components/Button"
 
 
 const ItemFruit = (props) => {
