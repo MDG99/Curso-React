@@ -2,6 +2,7 @@
 import imgUno from './assets/images/img-1.jpeg'
 import Button from "./components/Button"
 import ListFruit from './components/ListFruit'
+import ButtonState from './components/Buttonstate'
 
 
 const App = () => {
@@ -15,6 +16,8 @@ const App = () => {
         // Más de un componente se tiene que devolver en un contenedor
         // Los componentes se pueden reutilizar las veces que uno quiera
         <>
+        
+            <ButtonState></ButtonState>
             <h1 className={classTitle}>{title.toUpperCase()}</h1>
             <img src={pathImg} alt="" />
             <Button text="botón 1"/>
