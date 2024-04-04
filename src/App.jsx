@@ -1,33 +1,52 @@
 // Podemos importar usando vite. Nos trae el path
-import imgUno from './assets/images/img-1.jpeg'
-import Button from "./components/Button"
-import ListFruit from './components/ListFruit'
-import ButtonState from './components/Buttonstate'
+
+import { useState } from "react"
 
 
 const App = () => {
-    const title = "mi titulo desde una constante"
-    const classTitle = "text-center"
-    const pathImg = imgUno
 
-    const fruits = ["🍏", "🍉", "🍇", "🍋"]
+    const [count, setCount] = useState(0)
+
+    const handleClickDecrement = () => {
+        setCount(count - 1)
+    };
+
+    const handleClickIncrement = () => {
+        setCount(count + 1)
+    };
 
     return (
-        // Más de un componente se tiene que devolver en un contenedor
-        // Los componentes se pueden reutilizar las veces que uno quiera
-        <>
+            <div className="container mt-5 text-center">
+                <div className="row justify-content-center">
+                    <div className="col-5">
+                        <h1>Counter {count}</h1>
+                        <div className="d-grid gap-2">
+                            <button
+                                className="btn btn-outline-danger"
+                                onClick={handleClickDecrement}
+                                disabled={count === 0 && true}
+                            >
+                            Decrement
+                            </button>
+                            <button
+                                className="btn btn-outline-primary"
+                                onClick={handleClickIncrement}
+                            >
+                            Increment
+                            </button>
+                            <button
+                                className="btn btn-outline-dark"
+                                onClick={() => setCount(0)}
+                            >
+                            Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            );
         
-            <ButtonState></ButtonState>
-            <h1 className={classTitle}>{title.toUpperCase()}</h1>
-            <img src={pathImg} alt="" />
-            <Button text="botón 1"/>
-            <Button text="botón 2"/>
-            <Button text="botón 3"/>
-            <ListFruit fruits={fruits}/>
-            <ListFruit fruits={fruits}/>
-        </>
-    )
-}
+    };
 
 
 // Exportamos
